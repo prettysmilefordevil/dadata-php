@@ -1,15 +1,13 @@
 {
-    "name": "hflabs/dadata",
+    "name": "prettysmilefordevil/dadata",
     "type": "library",
     "description": "Data cleansing, enrichment and suggestions via Dadata API",
     "homepage": "https://github.com/nalgeon/dadata-php",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "HFLabs and contributors",
-            "homepage": "https://github.com/hflabs/dadata-php/contributors"
-        }
-    ],
+    "authors": [{
+        "name": "HFLabs and contributors",
+        "homepage": "https://github.com/hflabs/dadata-php/contributors"
+    }],
     "keywords": [
         "dadata",
         "suggestions",
