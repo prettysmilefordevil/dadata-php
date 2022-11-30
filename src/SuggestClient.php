@@ -4,11 +4,12 @@ namespace Dadata;
 
 class SuggestClient extends ClientBase
 {
-    const BASE_URL = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/";
 
-    public function __construct($token, $secret = null)
+    public function __construct($token, $secret = null, $baseUrl = null)
     {
-        parent::__construct(self::BASE_URL, $token, $secret);
+        if(!$baseUrl) $baseUrl = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/';
+
+        parent::__construct($baseUrl, $token, $secret);
     }
 
     public function findAffiliated($query, $count = Settings::SUGGESTION_COUNT, $kwargs = [])

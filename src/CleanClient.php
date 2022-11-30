@@ -4,11 +4,12 @@ namespace Dadata;
 
 class CleanClient extends ClientBase
 {
-    const BASE_URL = "https://cleaner.dadata.ru/api/v1/";
 
-    public function __construct($token, $secret)
+    public function __construct($token, $secret, $baseUrl = null)
     {
-        parent::__construct(self::BASE_URL, $token, $secret);
+        if(!$baseUrl) $baseUrl = "https://cleaner.dadata.ru/api/v1/";
+
+        parent::__construct($baseUrl, $token, $secret);
     }
 
     public function clean($name, $value)

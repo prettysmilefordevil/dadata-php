@@ -6,11 +6,11 @@ use DateTime;
 
 class ProfileClient extends ClientBase
 {
-    const BASE_URL = "https://dadata.ru/api/v2/";
 
-    public function __construct($token, $secret)
+    public function __construct($token, $secret, $baseUrl = null)
     {
-        parent::__construct(self::BASE_URL, $token, $secret);
+        if(!$baseUrl) $baseUrl = 'https://dadata.ru/api/v2/';
+        parent::__construct($baseUrl, $token, $secret);
     }
 
     public function getBalance()

@@ -8,11 +8,11 @@ class DadataClient
     private $profile;
     private $suggestions;
 
-    public function __construct($token, $secret)
+    public function __construct($token, $secret, $baseUrlClean = "https://cleaner.dadata.ru/api/v1/", $baseUrlProfile = 'https://dadata.ru/api/v2/', $baseUrlSuggest = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/')
     {
-        $this->cleaner = new CleanClient($token, $secret);
-        $this->profile = new ProfileClient($token, $secret);
-        $this->suggestions = new SuggestClient($token, $secret);
+        $this->cleaner = new CleanClient($token, $secret, $baseUrlClean);
+        $this->profile = new ProfileClient($token, $secret, $baseUrlProfile);
+        $this->suggestions = new SuggestClient($token, $secret, $baseUrlSuggest);
     }
 
     public function clean($name, $value)
